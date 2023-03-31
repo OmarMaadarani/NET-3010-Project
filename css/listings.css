@@ -1,0 +1,25 @@
+#listings {
+    padding-top: 10px;
+}
+
+.col.thumb,
+.col.price {
+    flex: 0 1 0%;
+}
+
+.col > a {
+    font-size: 20px;
+}
+
+.listing-thumb {
+    width: 350px;
+}
+
+.mileage {
+    font-weight: bold;
+}
+
+.listing-price {
+    font-size: 18px;
+    font-weight: bold;
+}
