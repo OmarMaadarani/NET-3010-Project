@@ -16,8 +16,25 @@
 	<body>
 		<?php include "../php/navbar.php" ?>
 		<div id="content">
-			<h1>Sell Your Car</h1>
+			<h1>Sell Your Car</h1><br>
             
+            <h2>Insert Images</h2>
+            <button class="btn btn-secondary">Upload Images</button><br><br>   
+            
+            <h2>Add Description</h2>
+            <input type="text" id="Description" name="Description"><br><br>
+
+            <h2>Add Starting Price</h2>
+            <input type="text" id="Price" name="Price"><br><br>
+
+            <h2>Amount of Kilometers on the Car</h2>
+            <input type="text" id="Distance" name="Distance"><br><br>
+
+            <button class="btn btn-secondary" onclick="alert('Car has Been Uploaded!')">Upload</button>
+
+
+
+                    
 		</div>
 		<footer>
 			<p>
