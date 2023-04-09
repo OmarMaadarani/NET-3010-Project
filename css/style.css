@@ -5,7 +5,8 @@
     --nav-colour: #fffff0;
     --header-footer-background: #4169e1;
     --link-primary-colour: #666699;
-
+    --primary-disabled: #C0C0DF;
+    --primary-disabled-hover: #5151A1;
 }
 
 html,
@@ -30,6 +31,10 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
+}
+
+h1 {
+    padding-top: 10px;
 }
 
 #content h1,
@@ -91,7 +96,7 @@ label {
     position: relative;
 }
 
-.nav-link::after {
+.nav-link.main::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -113,6 +118,26 @@ label {
     background-color: #214ED3;
 }
 
+
+/* */
+
+
+.nav-pills .nav-link {
+    background-color: var(--primary-disabled);
+}
+
+.nav-pills .nav-link:hover {
+    background-color: var(--primary-disabled-hover);
+}
+
+.nav-pills .nav-link:hover {
+    transform: scaleX(1);
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--header-footer-background);
+
+}
 
 /* Info Grid Styling */
 
@@ -228,6 +253,22 @@ label {
     cursor: pointer;
 
 }
+
+/* Login Page */
+#login-reg,
+.form-login {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+
+/* Buy/Sell Forms */
+#mileage::after {
+    content: "Km";
+}
+
 
 /* Animations */
 @-webkit-keyframes fadeInOut {
