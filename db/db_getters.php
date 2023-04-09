@@ -5,6 +5,7 @@ require_once "db.php";
 $get_userquery = $con->prepare("SELECT userID, email, username, password, permissions FROM users WHERE username = ?");
 $SELECT_USER_EMAIL_QUERY = $con->prepare("SELECT * FROM users WHERE email = ?");
 $SELECT_ALL_LISTINGS = $con->prepare("SELECT * FROM listings");
+$SELECT_USER_LISTINGS = $con->prepare("SELECT * FROM listings WHERE userID = ?");
 $SELECT_LISTING_IMG = $con->prepare("SELECT img FROM images WHERE listingID = ?");
 
 function get_user($username)
@@ -30,6 +31,15 @@ function get_listings()
 	global $SELECT_ALL_LISTINGS;
 	$SELECT_ALL_LISTINGS->execute();
 	$result = $SELECT_ALL_LISTINGS->get_result();
+	return $result->fetch_all(MYSQLI_ASSOC);
+}
+
+function get_user_listings($userID)
+{
+	global $SELECT_USER_LISTINGS;
+	$SELECT_USER_LISTINGS->bind_param("i", $userID);
+	$SELECT_USER_LISTINGS->execute();
+	$result = $SELECT_USER_LISTINGS->get_result();
 	return $result->fetch_all(MYSQLI_ASSOC);
 }
 
