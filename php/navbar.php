@@ -41,6 +41,9 @@ function lastItem()
 					<a class="nav-link main" href="/NET-3010-Project/Pages/sell.php">Sell Your Car</a>
 				</li>
 			<?php } ?>
+			<li class="nav-item">
+				<a class="nav-link" href="/NET-3010-Project/Pages/contact.php">Contact Us</a>
+			</li>
 		</ul>
 	</div>
 	<div class="collapse navbar-collapse justify-content-end" id="navbar-end">
