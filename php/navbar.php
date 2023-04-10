@@ -42,7 +42,7 @@ function lastItem()
 				</li>
 			<?php } ?>
 			<li class="nav-item">
-				<a class="nav-link" href="/NET-3010-Project/Pages/contact.php">Contact Us</a>
+				<a class="nav-link main" href="/NET-3010-Project/Pages/contact.php">Contact Us</a>
 			</li>
 		</ul>
 	</div>
