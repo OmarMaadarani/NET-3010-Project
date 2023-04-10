@@ -3,6 +3,7 @@
 require_once "db.php";
 
 $get_userquery = $con->prepare("SELECT userID, email, username, password, permissions FROM users WHERE username = ?");
+$SELECT_USER_BY_ID = $con->prepare("SELECT * FROM users WHERE userID = ?");
 $SELECT_USER_EMAIL_QUERY = $con->prepare("SELECT * FROM users WHERE email = ?");
 $SELECT_ALL_LISTINGS = $con->prepare("SELECT * FROM listings");
 $SELECT_USER_LISTINGS = $con->prepare("SELECT * FROM listings WHERE userID = ?");
@@ -14,6 +15,15 @@ function get_user($username)
 	$get_userquery->bind_param("s", $username);
 	$get_userquery->execute();
 	$result = $get_userquery->get_result();
+	return $result->fetch_assoc();
+}
+
+function get_user_by_id($userID)
+{
+	global $SELECT_USER_BY_ID;
+	$SELECT_USER_BY_ID->bind_param("i", $userID);
+	$SELECT_USER_BY_ID->execute();
+	$result = $SELECT_USER_BY_ID->get_result();
 	return $result->fetch_assoc();
 }
 
