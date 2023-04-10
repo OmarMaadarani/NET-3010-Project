@@ -2,7 +2,7 @@
 session_start();
 require_once "../db/db_getters.php";
 
-$listings = get_user_listings($_SESSION["$userID"]);
+$listings = get_user_listings($_SESSION["userID"]);
 $numLists = count($listings);
 $data = array();
 for ($i = 0; $i < $numLists; $i++) {

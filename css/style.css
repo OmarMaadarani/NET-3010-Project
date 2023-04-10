@@ -4,6 +4,7 @@
     --text-colour-primary: #3d3d3d;
     --nav-colour: #fffff0;
     --header-footer-background: #4169e1;
+    --header-footer-background-hover: #214ED3;
     --link-primary-colour: #666699;
     --primary-disabled: #C0C0DF;
     --primary-disabled-hover: #5151A1;
@@ -46,7 +47,7 @@ h2 {
 footer {
     content: "";
     background-color: var(--header-footer-background);
-    color: #fffff0;
+    color: var(--nav-colour);
     text-align: center;
     position: absolute;
     left: 0;
@@ -61,7 +62,7 @@ footer {
 }
 
 .footer-link {
-    color: ivory;
+    color: var(--nav-colour);
 }
 
 label {
@@ -72,7 +73,7 @@ label {
 
 .navbar {
     background-color: var(--header-footer-background);
-    color: #fffff0;
+    color: var(--nav-colour);
 }
 
 .navbar-nav {
@@ -83,7 +84,7 @@ label {
 
 .navbar-brand {
     font-weight: bold;
-    color: ivory;
+    color: var(--nav-colour);
     padding-right: 20px;
     padding-left: 20px;
 }
@@ -91,7 +92,7 @@ label {
 
 .nav-link {
     text-decoration: none;
-    color: ivory;
+    color: var(--nav-colour);
     display: inline-block;
     position: relative;
 }
@@ -115,7 +116,19 @@ label {
 .nav-link:hover,
 .navbar-brand:hover {
     color: white;
-    background-color: #214ED3;
+    background-color: var(--header-footer-background-hover);
+}
+
+#navbar-end {
+    padding-right: 20px;
+}
+
+.dropdown-menu {
+    min-width: auto;
+}
+
+#nav-drop.show {
+    color: var(--nav-colour);
 }
 
 
@@ -305,5 +318,9 @@ label {
     .column-image,
     .column-image2 {
         max-width: 50%
+    }
+
+    .navbar-expand-md .navbar-nav .dropdown-menu {
+        position: absolute;
     }
 }

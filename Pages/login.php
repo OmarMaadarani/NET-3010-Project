@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if ($user["password"] == $pass) {
 			$_SESSION["username"] = $username;
 			$_SESSION["userID"] = $user["userID"];
+			$_SESSION["email"] = $user["email"];
 			$_SESSION["permission"] = $user["permissions"];
 			$_SESSION["error"] = false;
 			//header("Location: ../index.php");
