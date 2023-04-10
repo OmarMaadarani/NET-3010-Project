@@ -36,9 +36,11 @@ function lastItem()
 			<li class="nav-item">
 				<a class="nav-link main" href="/NET-3010-Project/Pages/buy.php">Buy Car</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link main" href="/NET-3010-Project/Pages/sell.php">Sell Your Car</a>
-			</li>
+			<?php if (isset($_SESSION["userID"])) { ?>
+				<li class="nav-item">
+					<a class="nav-link main" href="/NET-3010-Project/Pages/sell.php">Sell Your Car</a>
+				</li>
+			<?php } ?>
 		</ul>
 	</div>
 	<div class="collapse navbar-collapse justify-content-end" id="navbar-end">
