@@ -1,3 +1,5 @@
+// WRITTEN BY OMAR
+
 <?php
 session_start();
 ?>

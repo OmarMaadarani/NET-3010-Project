@@ -1,3 +1,4 @@
+// FILE WRITTEN BY OMAR TO GET LISTINGS FROM DB
 async function getLists() {
 	let url = "../php/getListings.php"
 	let res = await fetch(url)
@@ -7,6 +8,7 @@ async function getLists() {
 
 	const listingsDiv = document.getElementById("listings")
 	data.forEach((list) => {
+		let id = list.listingID
 		let name = list.year + " " + list.carMake + " " + list.carModel
 		let desc = list.description
 		let price = list.price
@@ -15,18 +17,18 @@ async function getLists() {
 
 		listingsDiv.innerHTML += `<div class="row mb-3">
     <div class="col thumb">
-        <img class="listing-thumb" src="data:image/jpg;base64,${img}">
+        <img class="listing-thumb" src="${img}">
     </div>
     <div class="col">
-        <a href="#">${name}</a>
+        <a>${name}</a>
         <p class="description">
             ${desc}
         </p>
         <p><span class="mileage">Kilometers:</span> ${mileage} km</p>
     </div>
     <div class="col price">
-        <div class="listing-price">${price}</div>
-        <a href="#" class="btn btn-primary" role="button" data-bs-toggle="button" aria-pressed="false">Favourite</a>
+        <div class="listing-price">$${price}</div>
+        <a id=${id} class="btn btn-primary" role="button" onClick="addFavourite(this.id);">Favourite</a>
     </div>
 </div>
 </div>`

@@ -1,4 +1,5 @@
 <?php
+// WRITTEM BY OMAR 
 session_start();
 $_SESSION["username"] = null;
 $_SESSION["userID"] = null;
