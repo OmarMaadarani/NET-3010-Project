@@ -1,3 +1,4 @@
+<!-- Justin Franko inspiration: https://www.bootdey.com/snippets/view/profile-with-data-and-skills-->
 <?php
 session_start();
 require_once "../../db/db_getters.php";
