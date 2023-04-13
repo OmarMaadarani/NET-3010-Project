@@ -1,3 +1,5 @@
+// WRITTEN BY OMAR
+
 import { getMakes, getModels } from "./cars.js"
 
 // Get Car Makes and add them to the Makes dropdown list

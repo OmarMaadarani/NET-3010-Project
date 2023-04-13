@@ -1,4 +1,5 @@
 /**
+ * WRITTEN BY OMAR TO GET CAR INFO FROM API
  * cars.js
  *
  * File with functions to make REST API Calls to the CarAPI

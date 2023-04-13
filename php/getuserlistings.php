@@ -1,5 +1,6 @@
 <!-- Justin Franko -->
 <?php
+// WRITTEN BY JUSTIN
 session_start();
 require_once "../db/db_getters.php";
 

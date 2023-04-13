@@ -1,4 +1,6 @@
 <?php
+// WRITTEM BY OMAR 
+
 // FUnction called to process whether if the last nav item should be a Login link (Default) or Dropdown link (For Signed in Users )
 function lastItem()
 {

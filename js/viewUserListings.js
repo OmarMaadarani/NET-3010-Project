@@ -1,3 +1,5 @@
+// WRITTEN BY OMAR
+
 async function getLists() {
 	let url = "/NET-3010-Project/php/getUserListings.php"
 	let res = await fetch(url)

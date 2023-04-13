@@ -1,7 +1,12 @@
 <!-- Justin Franko -->
 <?php
+// PAGE WRITTEN BY OMAR AND JUSTIN
 session_start();
 require_once "../db/db_setters.php";
+
+if (!isset($_SESSION["userID"])) {
+	header("Location: login.php");
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	// If Logout button is set, and username is empty(from logout form)
@@ -9,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$model = htmlspecialchars($_POST["model"]);
 	$year = $_POST["year"];
 	$mileage = $_POST["mileage"];
-	$price = $_POST["price"];
+	$price = number_format($_POST["price"]);
 	$desc = htmlspecialchars($_POST["description"]);
 	$listingID = insert_listing($_SESSION["userID"], $make, $model, $price, $mileage, $year, $desc);
 	uploadFile($listingID);
@@ -19,7 +24,7 @@ function uploadFile($listingID)
 {
 	$image = $_FILES["images"]['tmp_name'];
 	$img = file_get_contents($image);
-	$name = $_FILES["images"]['name'];
+	$name = basename($_FILES["images"]['name']);
 
 	// Allow certain file formats 
 	$fileType = $_FILES["images"]['type'];
@@ -27,8 +32,11 @@ function uploadFile($listingID)
 	$allowTypes = array('image/jpg', 'image/png', 'image/jpeg', 'image/gif');
 	if (in_array($fileType, $allowTypes)) {
 		// Insert image content into database 
-		$insert = insert_img($_SESSION["userID"], $listingID, $img, $name);
-
+		$relPath = "../imgs/listings/" . strval($listingID) . "/";
+		$path = "/NET-3010-Project/imgs/listings/" . strval($listingID) . "/" . $name;
+		mkdir($relPath, 0777, true);
+		$insert = insert_img($_SESSION["userID"], $listingID, $path, $name);
+		move_uploaded_file($image, "$relPath/$name");
 		if ($insert) {
 			$status = 'success';
 			$statusMsg = "File uploaded successfully.";
